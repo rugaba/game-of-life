@@ -1,0 +1,4 @@
+ssh rugaba@192.168.217.154 mkdir -p deploy/release
+scp target/*.jar rugaba@192.168.217.154:deploy/release
+ssh rugaba@192.168.217.154 'kill `cat deploy/release/run.pid`'
+ssh rugaba@192.168.217.154 'java -jar deploy/release/*.jar'
